@@ -36,4 +36,40 @@ public class RomanNumeralTestWithBeforeEach {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
     }
+
+    @Test
+    public void numberWithInvalidSubtractor() {
+        int result = roman.convert("VL");
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    public void numberWithDoubleSubtractor() {
+        int result = roman.convert("XXL");
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    public void numberWithInvalidChars() {
+        int result = roman.convert("LOVE");
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    public void numberWithInvalidSequence() {
+        int result = roman.convert("LM");
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    public void numberWithFourOfAKind() {
+        int result = roman.convert("XXXX");
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    public void numberWithManyOfAKind() {
+        int result = roman.convert("CCCCCC");
+        Assertions.assertEquals(-1, result);
+    }
 }

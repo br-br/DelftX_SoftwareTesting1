@@ -33,4 +33,20 @@ public class RomanNumeralTest {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
     }
+
+    @Test
+    public void numberWithInvalidSubtractor() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("VL");
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    public void numberWithInvalidChars() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("LOVE");
+        Assertions.assertEquals(-1, result);
+    }
+
+    // stopped adding tests here and added them to the RomanNumeralTestWithBeforeEach class instead
 }
