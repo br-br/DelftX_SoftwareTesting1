@@ -11,7 +11,6 @@ public class BlackJack {
             rn = 0;
         if(ln > rn)
             return ln;
-        else
-            return rn;
+        return rn;
     }
 }
